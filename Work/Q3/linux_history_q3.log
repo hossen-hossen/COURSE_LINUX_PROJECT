@@ -1,0 +1,10 @@
+    1  cd ~/COURSE_LINUX_PROJECT
+    2  git checkout -b BR_Q3
+    3  cd Work/Q3/
+    4  chmod +x menu.sh
+    5  ./menu.sh
+    6  mkdir -p Diagrams_Q3
+    7  mv *.png Diagrams_Q3/
+    8  tar -czf diagrams_q3_$(date +%Y%m%d_%H%M).tar.gz Diagrams_Q3
+    9  mv diagrams_q3_*.tar.gz ../../BACKUPS/
+   10  history > ~/COURSE_LINUX_PROJECT/Work/Q3/linux_history_q3.log
