@@ -1,0 +1,8 @@
+    1  git checkout -b BR_Q4
+    2  cd Work/Q4
+    3  chmod +x run_plants_q4.sh
+    4  ./run_plants_q4.sh -c plants.csv
+    5  ./run_plants_q4.sh --csvFile plants.csv
+    6  ./run_plants_q4.sh -c plants.csv -v /tmp/my_venv_v2 -r ../Q2/requirements.txt
+    7  ./run_plants_q4.sh
+    8  history > ~/COURSE_LINUX_PROJECT/Work/Q4/linux_history_q4.log
