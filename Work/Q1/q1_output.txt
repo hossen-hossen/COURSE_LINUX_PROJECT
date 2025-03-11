@@ -1,0 +1,73 @@
+Time: Tue Mar 11 19:41:56 IST 2025
+USER DETAILS: ubuntu:x:1000:1000:,,,:/home/ubuntu:/bin/bash
+REPO: /home/ubuntu/COURSE_LINUX_PROJECT
+GithubUrl: https://github.com/hossen-hossen
+/COURSE_LINUX_PROJECT.git 
+VERSIONID: "22.04"
+
+------------------------
+# Tree listing of the repository:
+.
+├── BACKUPS
+├── CODE
+│   ├── plant.py
+│   └── py1.py
+├── DATA
+│   ├── FIle_1.txt
+│   ├── File_2.txt
+│   ├── img1.jpg
+│   ├── img2.jpg
+│   ├── img3.jpg
+│   └── plants.csv
+├── DOWNLOADS
+│   └── LINUX_COURSE_WORK-downloads
+│       ├── FIle_1.txt
+│       ├── File_2.txt
+│       ├── img1.jpg
+│       ├── img2.jpg
+│       ├── img3.jpg
+│       ├── plant.py
+│       ├── plants.csv
+│       └── py1.py
+└── Work
+    ├── Q1
+    ├── Q2
+    ├── Q3
+    └── Q4
+
+10 directories, 16 files
+
+------------------------
+All .sh files in home:
+/home/ubuntu/LINUX_COURSE_PROJECT/Work/Q4/q4_improved.sh
+/home/ubuntu/LINUX_COURSE_PROJECT/Work/Q4/q4.sh
+/home/ubuntu/LINUX_COURSE_PROJECT/Work/Q3/menu.sh
+/home/ubuntu/.vscode-server/bin/2fc07b811f760549dab9be9d2bedd06c51dfcb9a/bin/helpers/check-requirements.sh
+/home/ubuntu/.vscode-server/bin/2fc07b811f760549dab9be9d2bedd06c51dfcb9a/bin/helpers/browser.sh
+/home/ubuntu/.vscode-server/bin/2fc07b811f760549dab9be9d2bedd06c51dfcb9a/extensions/ms-vscode.js-debug/src/targets/node/terminateProcess.sh
+/home/ubuntu/.vscode-server/bin/2fc07b811f760549dab9be9d2bedd06c51dfcb9a/extensions/terminal-suggest/fixtures/shell-parser/variables/input.sh
+/home/ubuntu/.vscode-server/bin/2fc07b811f760549dab9be9d2bedd06c51dfcb9a/extensions/terminal-suggest/fixtures/shell-parser/primaryExpressions/input.sh
+/home/ubuntu/.vscode-server/bin/2fc07b811f760549dab9be9d2bedd06c51dfcb9a/extensions/terminal-suggest/fixtures/shell-parser/basic/input.sh
+/home/ubuntu/.vscode-server/bin/2fc07b811f760549dab9be9d2bedd06c51dfcb9a/extensions/terminal-suggest/fixtures/shell-parser/multipleStatements/input.sh
+/home/ubuntu/.vscode-server/bin/2fc07b811f760549dab9be9d2bedd06c51dfcb9a/extensions/terminal-suggest/scripts/update-specs.sh
+/home/ubuntu/.vscode-server/bin/2fc07b811f760549dab9be9d2bedd06c51dfcb9a/extensions/terminal-suggest/scripts/clone-fig.sh
+/home/ubuntu/.vscode-server/bin/2fc07b811f760549dab9be9d2bedd06c51dfcb9a/extensions/git/dist/git-editor.sh
+/home/ubuntu/.vscode-server/bin/2fc07b811f760549dab9be9d2bedd06c51dfcb9a/extensions/git/dist/askpass.sh
+/home/ubuntu/.vscode-server/bin/2fc07b811f760549dab9be9d2bedd06c51dfcb9a/extensions/git/dist/ssh-askpass.sh
+/home/ubuntu/.vscode-server/bin/2fc07b811f760549dab9be9d2bedd06c51dfcb9a/extensions/git/dist/ssh-askpass-empty.sh
+/home/ubuntu/.vscode-server/bin/2fc07b811f760549dab9be9d2bedd06c51dfcb9a/extensions/git/dist/git-editor-empty.sh
+/home/ubuntu/.vscode-server/bin/2fc07b811f760549dab9be9d2bedd06c51dfcb9a/extensions/git/dist/askpass-empty.sh
+/home/ubuntu/.vscode-server/bin/2fc07b811f760549dab9be9d2bedd06c51dfcb9a/out/vs/base/node/cpuUsage.sh
+/home/ubuntu/.vscode-server/bin/2fc07b811f760549dab9be9d2bedd06c51dfcb9a/out/vs/base/node/ps.sh
+/home/ubuntu/.vscode-server/bin/2fc07b811f760549dab9be9d2bedd06c51dfcb9a/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh
+/home/ubuntu/.vscode-server/bin/2fc07b811f760549dab9be9d2bedd06c51dfcb9a/node_modules/jschardet/scripts/show-size-changes.sh
+/home/ubuntu/.vscode-server/bin/2fc07b811f760549dab9be9d2bedd06c51dfcb9a/node_modules/jschardet/scripts/run-workflow.sh
+/home/ubuntu/.vscode-server/data/User/History/21c0261f/JNrj.sh
+/home/ubuntu/.vscode-server/data/User/History/21c0261f/Jpyd.sh
+/home/ubuntu/.vscode-server/data/User/History/21c0261f/jZfe.sh
+/home/ubuntu/.vscode-server/data/User/History/-5e6acd9e/UZY0.sh
+/home/ubuntu/.vscode-server/data/User/History/-616c45c4/UivH.sh
+/home/ubuntu/.vscode-server/data/User/History/-616c45c4/i7Sk.sh
+/home/ubuntu/.vscode-server/data/User/History/-616c45c4/kY1G.sh
+/home/ubuntu/PROJECT_COURSE_LINUX/Work/Q4/run_plants.sh
+/home/ubuntu/PROJECT_COURSE_LINUX/Work/Q3/menu.sh
