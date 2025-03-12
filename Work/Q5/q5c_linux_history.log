@@ -1,0 +1,108 @@
+    1  git checkout -b BR_Q5
+    2  mkdir -p Work/Q5
+    3  cd Work/Q5
+    4  docker run -it --name=python_q5 ubuntu:latest /bin/bash
+    5  sudo apt-get install -y docker.io
+    6  sudo service docker start
+    7  docker --version
+    8  docker run hello-world
+    9  docker run -it --name=python_q5 ubuntu:latest /bin/bash
+   10  docker start -i python_q5
+   11  docker cp python_q5:/merged.png .
+   12  docker cp python_q5:/merged_reversed.png .
+   13  docker cp python_q5:/container_hist_partA.log .
+   14  git add Work/Q5/merged*.png Work/Q5/container_hist_partA.log
+   15  cd ~
+   16  cd COURSE_LINUX_PROJECT/
+   17  git add Work/Q5/merged*.png Work/Q5/container_hist_partA.log
+   18  git commit -m "Q5 Part A: interactive container steps"
+   19  git checkout master
+   20  git merge BR_Q5
+   21  git push
+   22  git checkout BR_Q5
+   23  git push --set-upstream origin BR_Q5
+   24  cd Work/Q5/
+   25  cat <<EOF > Dockerfile.q2
+FROM python:3.9-slim
+
+WORKDIR /app
+
+COPY ../Q2/plant_plots.py .
+COPY ../Q2/requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+ENTRYPOINT ["python", "plant_plots.py"]
+EOF
+
+   26  docker build -t q2_runner -f Dockerfile.q2 .
+   27  cp ~/COURSE_LINUX_PROJECT/Work/Q2/plant_plots.py ~/COURSE_LINUX_PROJECT/Work/Q5/
+   28  cp ~/COURSE_LINUX_PROJECT/Work/Q2/requirements.txt ~/COURSE_LINUX_PROJECT/Work/Q5/
+   29  docker build -t q2_runner -f Dockerfile.q2 .
+   30  docker run --name q2_container q2_runner   --plant "Rose" --height 50 55 60 --leaf_count 30 34 38 --dry_weight 2.0 2.2 2.4
+   31  docker run --rm   -v ~/COURSE_LINUX_PROJECT/Work/Q5/output:/data   q2_runner   --plant "Rose" --height 50 55 60 --leaf_count 30 34 38 --dry_weight 2.0 2.2 2.4
+   32  history > Work/Q5/q5b_history.log
+   33  בג ץץ
+   34  cd ..
+   35  history > Work/Q5/q5b_history.log
+   36  git add .
+   37  git commit -m "Q5 Part B: Dockerfile for Q2 code + run examples"
+   38  cd Work/Q5/
+   39  cat <<EOF > Dockerfile.java
+FROM openjdk:11-jre-slim
+
+WORKDIR /app
+
+COPY Watermark.java .
+RUN javac Watermark.java
+
+ENTRYPOINT ["java", "Watermark"]
+EOF
+
+   40  docker build -t java_marker -f Dockerfile.java .
+   41  docker run --rm   -v ~/COURSE_LINUX_PROJECT/Work/Q5/output:/images   java_marker   /images "Hossen Hossen ID=322389511"
+   42  docker cp q2_tmp:/app/Tulip_scatter.png ./output/
+   43  docker cp q2_tmp:/app/Tulip_histogram.png ./output/
+   44  docker cp q2_tmp:/app/Tulip_line_plot.png ./output/
+   45  docker run --name q2_tmp q2_runner   --plant "Tulip" --height 30 35 40 --leaf_count 12 14 16 --dry_weight 1.2 1.3 1.4
+   46  docker cp q2_tmp:/app/Tulip_scatter.png ./output/
+   47  docker cp q2_tmp:/app/Tulip_histogram.png ./output/
+   48  docker cp q2_tmp:/app/Tulip_line_plot.png ./output/
+   49  ls
+   50  sudo chown -R ubuntu:ubuntu output
+   51  sudo chmod -R 755 output
+   52  docker exec q2_tmp ls /app
+   53  docker run --name q2_tmp q2_runner   --plant "Tulip" --height 30 35 40 --leaf_count 12 14 16 --dry_weight 1.2 1.3 1.4
+   54  docker rm q2_tmp
+   55  docker run --name q2_tmp q2_runner   --plant "Tulip" --height 30 35 40 --leaf_count 12 14 16 --dry_weight 1.2 1.3 1.4
+   56  docker exec q2_tmp ls /app
+   57  docker cp q2_tmp:/app/Tulip_scatter.png ./output/
+   58  docker cp q2_tmp:/app/Tulip_histogram.png ./output/
+   59  docker cp q2_tmp:/app/Tulip_line_plot.png ./output/
+   60  docker run --rm   -v ~/COURSE_LINUX_PROJECT/Work/Q5/output:/images   java_marker   /images "Hossen Hossen ID=322389511"
+   61  docker build -t java_marker -f Dockerfile.java .
+   62  docker run --rm   -v ~/COURSE_LINUX_PROJECT/Work/Q5/output:/images   java_marker   /images "Hossen Hossen ID=322389511"
+   63  cat <<'EOS' > chain_docker.sh
+#!/usr/bin/env bash
+
+# 1) Build the Q2 container (assuming a Dockerfile.q2 already exists)
+docker build -t q2_runner -f Dockerfile.q2 .
+
+# 2) Generate images from the Q2 code
+mkdir -p output
+docker run --rm -v $(pwd)/output:/app/output q2_runner \
+  --plant "Tulip" --height 30 35 40 --leaf_count 12 14 16 --dry_weight 1.0 1.2 1.5
+
+# 3) Build the Java marker container
+docker build -t java_marker -f Dockerfile.java .
+
+# 4) Run the Java container to watermark with your name and ID
+docker run --rm -v $(pwd)/output:/images java_marker /images "Hossen Hossen ID=322389511"
+
+# 5) Clean up images
+docker rmi q2_runner java_marker -f
+EOS
+
+   64  chmod +x chain_docker.sh
+   65  ./chain_docker.sh
+   66  history > q5c_linux_history.log
