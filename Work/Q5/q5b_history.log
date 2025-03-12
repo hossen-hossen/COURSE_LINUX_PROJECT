@@ -1,0 +1,47 @@
+    1  git checkout -b BR_Q5
+    2  mkdir -p Work/Q5
+    3  cd Work/Q5
+    4  docker run -it --name=python_q5 ubuntu:latest /bin/bash
+    5  sudo apt-get install -y docker.io
+    6  sudo service docker start
+    7  docker --version
+    8  docker run hello-world
+    9  docker run -it --name=python_q5 ubuntu:latest /bin/bash
+   10  docker start -i python_q5
+   11  docker cp python_q5:/merged.png .
+   12  docker cp python_q5:/merged_reversed.png .
+   13  docker cp python_q5:/container_hist_partA.log .
+   14  git add Work/Q5/merged*.png Work/Q5/container_hist_partA.log
+   15  cd ~
+   16  cd COURSE_LINUX_PROJECT/
+   17  git add Work/Q5/merged*.png Work/Q5/container_hist_partA.log
+   18  git commit -m "Q5 Part A: interactive container steps"
+   19  git checkout master
+   20  git merge BR_Q5
+   21  git push
+   22  git checkout BR_Q5
+   23  git push --set-upstream origin BR_Q5
+   24  cd Work/Q5/
+   25  cat <<EOF > Dockerfile.q2
+FROM python:3.9-slim
+
+WORKDIR /app
+
+COPY ../Q2/plant_plots.py .
+COPY ../Q2/requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+ENTRYPOINT ["python", "plant_plots.py"]
+EOF
+
+   26  docker build -t q2_runner -f Dockerfile.q2 .
+   27  cp ~/COURSE_LINUX_PROJECT/Work/Q2/plant_plots.py ~/COURSE_LINUX_PROJECT/Work/Q5/
+   28  cp ~/COURSE_LINUX_PROJECT/Work/Q2/requirements.txt ~/COURSE_LINUX_PROJECT/Work/Q5/
+   29  docker build -t q2_runner -f Dockerfile.q2 .
+   30  docker run --name q2_container q2_runner   --plant "Rose" --height 50 55 60 --leaf_count 30 34 38 --dry_weight 2.0 2.2 2.4
+   31  docker run --rm   -v ~/COURSE_LINUX_PROJECT/Work/Q5/output:/data   q2_runner   --plant "Rose" --height 50 55 60 --leaf_count 30 34 38 --dry_weight 2.0 2.2 2.4
+   32  history > Work/Q5/q5b_history.log
+   33  בג ץץ
+   34  cd ..
+   35  history > Work/Q5/q5b_history.log
